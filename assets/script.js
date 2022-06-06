@@ -54,15 +54,17 @@ $(container).append(timeBlock(block))
 getHours();
 
 //compare current time to time block to see if past,present, furure
-for (var block = 9; block < 17; block++) {
+for (let block = 9; block < 17; block++) {
     if (block < currentTime) {
-        newTextInput.addClass("past");
+        $(row).css('background-color', 'grey');
     } else if (block > currentTime) {
-        newTextInput.addClass("present");
+        $(row).css('background-color', 'red');
     } else {
-        newTextInput.addClass("future");
+        $(row).css('background-color', 'green');
     }
 }
+
+
 
 //local storage
 $("#button").on("click", function (event) {
