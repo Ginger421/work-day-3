@@ -3,6 +3,9 @@ const container = $('.container');
 
 const todayDate = document.getElementById("currentDay");
 
+//will give hour of the day in am/pm
+const currentTime = moment().format("h");
+
 setInterval(time, 1000);
 
 //display current date and time
@@ -50,10 +53,33 @@ $(container).append(timeBlock(block))
 
 getHours();
 
-const save = document.getElementById('button');
-save.addEventListener('click', function () {
-    localStorage.setItem('key', 'button')
-})
+//compare current time to time block to see if past,present, furure
+for (var block = 9; block < 17; block++) {
+    if (block < currentTime) {
+        newTextInput.addClass("past");
+    } else if (block > currentTime) {
+        newTextInput.addClass("present");
+    } else {
+        newTextInput.addClass("future");
+    }
+}
+
+//local storage
+$("#button").on("click", function (event) {
+    event.preventDefault();
+
+    var textInput = $('#task');
+    var textValue = textInput.val();
+    localStorage.setItem('textInput', textValue);
+    localStorage.getItem(textInput);
+    }
+
+)
+
+//const save = document.getElementById('button');
+//save.addEventListener('click', function () {
+//    localStorage.setItem('key', 'button')
+//})
 
 console.log($(container).children());
 
