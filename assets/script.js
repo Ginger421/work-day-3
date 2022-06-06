@@ -3,9 +3,6 @@ const container = $('.container');
 
 const todayDate = document.getElementById("currentDay");
 
-//will give hour of the day in am/pm
-const currentTime = moment().format("h");
-
 setInterval(time, 1000);
 
 //display current date and time
@@ -16,12 +13,6 @@ function time() {
 //current time
 var thisMoment = moment().format('LT');
 
-
-//create function to see if current day and time is within desired range
-//will need range but do i need start and end  as separate variables?
-//will need variable to compare to
-
-//hour, text, submit
 //colstart is time
 //colMiddle is for text input
 //colEnd has not been assigned
@@ -45,6 +36,7 @@ function timeBlock(block){
     console.log(container);
 }
 
+//from the above created row with 3 columns, create the 9 rows with 3 columns each
 function getHours(params) {
 for (let block = 9; block <= 17; block++){
 $(container).append(timeBlock(block))
@@ -54,16 +46,19 @@ $(container).append(timeBlock(block))
 getHours();
 
 //compare current time to time block to see if past,present, furure
-for (let block = 9; block < 17; block++) {
-    if (block < currentTime) {
-        $(row).css('background-color', 'grey');
-    } else if (block > currentTime) {
-        $(row).css('background-color', 'red');
-    } else {
-        $(row).css('background-color', 'green');
+function compareTime(params) {
+//will give hour of the day in am/pm
+const currentTime = moment().format("h");
+    for (let block = 9; block < 17; block++) {
+        if (block < currentTime) {
+            $(row).css('background-color', 'grey');
+        } else if (block > currentTime) {
+            $(row).css('background-color', 'red');
+        } else {
+            $(row).css('background-color', 'green');
+        }
     }
 }
-
 
 
 //local storage
