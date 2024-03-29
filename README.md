@@ -7,10 +7,14 @@ Moment.js and JQUERY were used. A function was used to display the current date 
 
 The local storage and past, present, future color changes still do not work.
 
-Reop:
-Deployed:
+Reop: https://github.com/Ginger421/work-day-3
+Deployed: https://ginger421.github.io/work-day-3/
 
 ![image](https://github.com/Ginger421/work-day-3/assets/101539821/b65ad1e7-3a4c-4c37-bb5c-5f57f40ac446)
+
+Contact
+github: https://github.com/Ginger421
+email: gingerowen0421@gmail.com
 
 
 
